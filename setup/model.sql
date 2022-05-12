@@ -58,7 +58,6 @@ create table transport_permission(
     transport_read boolean default false,
     transport_delete boolean default false,
     transport_update boolean default false,
-    branch_id serial not null references branch(branch_id)
     staff_id serial not null references stuff(stuff_id)
 );
 
@@ -70,6 +69,6 @@ create table branch_permission(
     branch_read boolean default false,
     branch_delete boolean default false,
     branch_update boolean default false,
-    branch_id serial not null references branch(branch_id),
     stuff_id serial not null references stuff(stuff_id)
 )
+

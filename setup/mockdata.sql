@@ -19,3 +19,9 @@ insert into stuff (branch_id, username, password, birth_date, gender) values
 (3, 'Asal', 'root', '2000-03-12', 'female'),
 (3, 'Jonon', 'root', '2000-03-12', 'female');
 
+
+
+insert into transport_permission (stuff_id, transport_create, transport_delete, transport_read, transport_update) values
+(4, 'true', 'true', 'true', 'true');
+insert into branch_permission(stuff_id, transport_create, transport_delete, transport_read, transport_update) values
+(4, 'true', 'true', 'true', 'true');
