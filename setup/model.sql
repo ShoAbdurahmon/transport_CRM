@@ -15,9 +15,9 @@ create database transport_sale;
 
 create extension if not exists "uuid-ossp";
 
-drop table if exists branches;
+drop table if exists branch;
 
-create table branches (
+create table branch (
     branch_id uuid default uuid_generate_v4() primary key,
     branch_name varchar(255) not null,
     branch_address varchar(255) not null,
