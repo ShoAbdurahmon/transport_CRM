@@ -23,5 +23,5 @@ insert into stuff (branch_id, username, password, birth_date, gender) values
 
 insert into transport_permission (stuff_id, transport_create, transport_delete, transport_read, transport_update) values
 (4, 'true', 'true', 'true', 'true');
-insert into branch_permission(stuff_id, transport_create, transport_delete, transport_read, transport_update) values
+insert into branch_permission(stuff_id, branch_create, branch_delete, branch_read, branch_update) values
 (4, 'true', 'true', 'true', 'true');

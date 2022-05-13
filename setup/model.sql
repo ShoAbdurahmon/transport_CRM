@@ -58,7 +58,7 @@ create table transport_permission(
     transport_read boolean default false,
     transport_delete boolean default false,
     transport_update boolean default false,
-    staff_id serial not null references stuff(stuff_id)
+    stuff_id serial not null references stuff(stuff_id)
 );
 
 drop table if exists branch_permission;
