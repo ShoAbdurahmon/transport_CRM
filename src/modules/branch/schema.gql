@@ -1,14 +1,32 @@
 type Query {
-    users(
+    branches(
         pagination: Pagination
         search: String
         sort: Sort
-    ): [User!]!
-    user(userId: ID!): User
+    ): [Branch!]!
+    branch(branch_id: ID!): Branch!
 }
 
-type User {
-    userId: ID!
-    username: String!
-    contact: String!
+type Branch {
+    branch_id: ID!
+    branch_name: String!
+    branch_address: String!
+    time_created: String!
+}
+type Mutation {
+    addBranch(
+        stuff_id: ID!
+        branch_name: String!
+        branch_address: String!
+    ): MutationResponse!
+    changeBranch(
+        stuff_id: ID!
+        branch_id: ID!
+        branch_name: String!
+        branch_address: String!
+    ): MutationResponse!
+    deleteBranch(
+        stuff_id: ID!
+        branch_id: ID!
+    ): MutationResponse!
 }

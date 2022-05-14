@@ -1,14 +1,30 @@
 type Query {
-    users(
+    transports(
         pagination: Pagination
         search: String
         sort: Sort
-    ): [User!]!
-    user(userId: ID!): User
+    ): [Transport!]!
+    transport(transport_id: ID!): Transport!
 }
 
-type User {
-    userId: ID!
-    username: String!
-    contact: String!
+type Transport {
+    branch_id: ID!
+    transport_id: ID!
+    transport_name: String!
+    transport_model: String!
+    transport_img: String!
+    transport_color: String!
+    time_created: String!
+    
 }
+# type Mutation {
+#   login(username: String!, password: String!): AuthResponse!
+#   # register(
+#   #   username: String!
+#   #   password: String!
+#   #   confirmPassword: String!
+#   #   staffBirthDate: String!
+#   #   gender: String!
+#   #   brancheId: ID!
+#   # ): AuthResponse!
+# }

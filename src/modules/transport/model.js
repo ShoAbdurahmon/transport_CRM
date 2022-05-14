@@ -1,23 +1,19 @@
 import query from './sql.js'
 import db from '#pg'
 
-async function getUsers({ page, limit, search, sortKey, sortValue }) {
+async function getTransports({ page, limit, search, sortKey, sortValue }) {
     return await db(
-        query.GET_USERS,
-        (page - 1) * limit,
-        limit,
-        search,
-        sortKey,
-        sortValue
+        query.GET_TRANSPORTS,
     )
 }
 
-async function getUser({ userId }) {
-    const [user] = await db(query.GET_USER, userId)
-    return user
+async function getTransport({ transport_id }) {
+    const [ transport ] = await db(query.GET_TRANSPORT, transport_id)
+    console.log(transport)
+    return transport
 }
 
 export default {
-    getUsers,
-    getUser
+    getTransports,
+    getTransport
 }

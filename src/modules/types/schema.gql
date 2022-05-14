@@ -14,16 +14,22 @@ enum SortOptions {
     toLargest
     toSmallest
 }
+enum Bool {
+    TRUE
+    FALSE
+}
 
 type MutationResponse {
   status: Int!
   message: String!
-  data: GlobalType!
 }
+
 
 type AuthResponse {
   status: Int!
   message: String!
   token: String
-  data: GlobalType
+  data: Stuff!
 }
+
+union GlobalType = Stuff | Branch | AuthResponse

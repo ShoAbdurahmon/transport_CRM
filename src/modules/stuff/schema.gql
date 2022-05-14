@@ -1,14 +1,33 @@
 type Query {
-    users(
+    stuffs(
         pagination: Pagination
         search: String
         sort: Sort
-    ): [User!]!
-    user(userId: ID!): User
+    ): [Stuff!]!
+    stuff(stuff_id: ID!): Stuff!
 }
 
-type User {
-    userId: ID!
+type Stuff {
+    stuff_id: ID!
+    branch_id: ID!
     username: String!
-    contact: String!
+    password: String!
+    birth_date: String!
+    gender: String!
+    time_created: String!
+}
+type Mutation {
+  login(username: String!, password: String!): AuthResponse!
+  register(
+    username: String!
+    password: String!
+    confirmPassword: String!
+    birth_date: String!
+    gender: String!
+    branch_id: ID!
+  ): AuthResponse!
+
+  changeBranchPermission(stuff_id: ID! giving_permissions_to_stuff_id: ID! create_branch: Bool!, delete_branch: Bool!, read_branch: Bool, update_branch: Bool!):MutationResponse!
+  changeTransportPermission(stuff_id: ID! giving_permissions_to_stuff_id: ID! create_transport: Bool!, delete_transport: Bool!, read_transport: Bool, update_transport: Bool!):MutationResponse!
+
 }

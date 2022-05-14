@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon -e * src/server.js"
+    "dev": "nodemon src/server.js"
   },
   "keywords": [],
   "author": "",
@@ -18,10 +18,11 @@
     "express": "^4.18.1",
     "graphql": "^16.5.0",
     "jsonwebtoken": "^8.5.1",
-    "pg": "^8.7.3"
+    "pg": "^8.7.3",
+    "sha256": "^0.2.0"
   },
   "imports": {
     "#pg": "./src/config/database.js",
-    "#config/*": "./src/config/*js"
+    "#config/*": "./src/config/*.js"
   }
 }
